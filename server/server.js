@@ -14,11 +14,17 @@ await connectDb();
 
 app.use(cors());
 
+
+app.post("/clerk", express.json(), (req, res) => { 
+    // 3. Runs only if next() is called
+    console.log("Route reached");
+    res.send("data sent");
+  });
+
 //routes
 app.get("/", (req, res) => {
   res.send("API working");
 });
-app.post("/clerk", express.json(), clerkWebhooks);
 
 //Port
 const PORT = process.env.PORT || 5000;
