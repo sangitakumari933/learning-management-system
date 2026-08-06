@@ -15,11 +15,7 @@ await connectDb();
 app.use(cors());
 
 
-app.post("/clerk", express.json(), clerkWebhooks, (req, res) => { 
-    // 3. Runs only if next() is called
-    console.log("Route reached");
-    res.send("data sent");
-  });
+app.post("/clerk", express.json(), clerkWebhooks);
 
 //routes
 app.get("/", (req, res) => {

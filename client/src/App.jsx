@@ -14,6 +14,7 @@ import AddCourse from "./pages/educator/AddCourse";
 import StudentsEnrolled from "./pages/educator/StudentsEnrolled";
 import MyCourses from "./pages/educator/MyCourses";
 import "quill/dist/quill.snow.css";
+import About from "./pages/commonPages/About"
 
 const App = () => {
   const isEducatorRoute = useMatch("/educator/*");
@@ -22,6 +23,7 @@ const App = () => {
       {!isEducatorRoute && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/course-list" element={<CourseList />} />
         <Route path="/course-list/:input" element={<CourseList />} />
         <Route path="/course/:id" element={<CourseDetails />} />
